@@ -1,0 +1,20 @@
+{
+  "name": "effect-kit",
+  "interface": {
+    "displayName": "effect-kit"
+  },
+  "plugins": [
+    {
+      "name": "effect-kit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/effect-kit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

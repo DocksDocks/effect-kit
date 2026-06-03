@@ -1,0 +1,13 @@
+{
+  "name": "effect-kit",
+  "description": "Cross-tool Effect-TS skill kit: repo setup, idiomatic Effect 3.x patterns, and Fastify/Next.js/React → Effect porting",
+  "version": "0.1.0",
+  "author": {
+    "name": "DocksDocks"
+  },
+  "license": "MIT",
+  "skills": [
+    "./skills/engineering",
+    "./skills/productivity"
+  ]
+}
