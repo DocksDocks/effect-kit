@@ -22,11 +22,11 @@
 #   scripts/skills/content-hash.sh --check-only [root]  report per skill: unchanged | would-bump;
 #                                                        exit non-zero if any would-bump (CI gate)
 #
-# Default root: plugins/docks/skills
+# Default root: plugins/effect-kit/skills
 set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-DEFAULT_ROOT="$REPO_DIR/plugins/docks/skills"
+DEFAULT_ROOT="$REPO_DIR/plugins/effect-kit/skills"
 
 sha256() {
   if command -v shasum >/dev/null 2>&1; then shasum -a 256 | awk '{print $1}'

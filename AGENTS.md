@@ -2,7 +2,7 @@
 
 Cross-tool Effect-TS skill kit: repo setup, idiomatic Effect 3.x patterns, and Fastify/Next.js/React → Effect porting
 
-`effect-kit` is a cross-tool plugin built on the docks scaffold — skills surface in every agentskills.io runtime (Claude Code, Codex, OpenCode). This root file stays repo-wide; per-area conventions load lazily from nested `AGENTS.md` nodes (see Context tree).
+`effect-kit` is a cross-tool plugin built on the docks scaffold and meant to run **alongside the [docks](https://github.com/DocksDocks/docks) plugin** — skills surface in every agentskills.io runtime (Claude Code, Codex, OpenCode). The plan-lifecycle and authoring skills (`plan-init`, `plan-manager`, `plan-review`, `write-skill`, `context-tree`) that the Effect skills reference are provided by docks, not bundled here. This root file stays repo-wide; per-area conventions load lazily from nested `AGENTS.md` nodes (see Context tree).
 
 ## Repository scope
 
@@ -11,7 +11,7 @@ Cross-tool Effect-TS skill kit: repo setup, idiomatic Effect 3.x patterns, and F
 ├── plugins/effect-kit/
 │   ├── .claude-plugin/plugin.json    Claude plugin manifest
 │   ├── .codex-plugin/plugin.json     Codex plugin manifest
-│   └── skills/                       cross-tool skills (productivity/, engineering/)
+│   └── skills/                       cross-tool skills (engineering/ — the Effect payload)
 ├── .claude-plugin/marketplace.json   Claude marketplace catalog
 ├── .agents/plugins/marketplace.json  Codex marketplace catalog
 ├── docs/plans/                       plan lifecycle (bootstrapped by plan-init)
@@ -46,3 +46,4 @@ The `context-tree` skill maintains these nodes; `scripts/tree/guard.sh` enforces
 - Skill bodies stay ≤500 lines per agentskills.io spec (sweet spot 80–310)
 - Manifest versions stay in lockstep across both `plugin.json`s and both marketplace catalogs
 - Effect best practices are self-contained in each skill's `references/`; the skills opportunistically use the `effect-solutions` CLI, context7, or a cloned `effect` source tree when present, but never depend on them
+- docks is a hard companion: the Claude manifests declare a cross-marketplace `dependencies` on `docks@docks` (gated by `allowCrossMarketplaceDependenciesOn: ["docks"]` in the root marketplace.json). Codex has no dependency field, so docks is a documented manual prerequisite there — keep both in sync if the docks marketplace/plugin name ever changes

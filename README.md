@@ -26,6 +26,8 @@ claude --plugin-dir ./plugins/effect-kit
 
 Codex consumes the same skills via `.codex-plugin/plugin.json` + `.agents/plugins/marketplace.json`.
 
+> **Requires [docks](https://github.com/DocksDocks/docks).** effect-kit delegates plan-lifecycle and authoring to docks skills. On Claude Code this is a declared cross-marketplace dependency (Claude Code ≥ v2.1.110): add the docks marketplace **first** — `/plugin marketplace add DocksDocks/docks` — then installing effect-kit pulls docks in. Install won't bootstrap a marketplace you haven't added. Codex has **no** plugin-dependency mechanism, so install docks manually there.
+
 ## Layout
 
 ```
@@ -33,13 +35,12 @@ plugins/effect-kit/
 ├── .claude-plugin/plugin.json     Claude manifest
 ├── .codex-plugin/plugin.json      Codex manifest
 └── skills/
-    ├── engineering/               effect-ts-setup · effect-ts-specialist · effect-ts-port
-    └── productivity/              bundled plan-lifecycle + authoring skills
+    └── engineering/               effect-ts-setup · effect-ts-specialist · effect-ts-port
 docs/plans/                        plan lifecycle (used by effect-ts-port)
 scripts/                           author-side validators + ci.sh
 ```
 
-The bundled `productivity/` skills (`plan-init`, `plan-manager`, `plan-review`, `write-skill`, `context-tree`) come from the [docks](https://github.com/DocksDocks/docks) scaffold and back the planning + authoring workflow.
+effect-kit is a **companion to [docks](https://github.com/DocksDocks/docks)** — install both. The plan-lifecycle and authoring skills (`plan-init`, `plan-manager`, `plan-review`, `write-skill`, `context-tree`) that `effect-ts-port` leans on are provided by docks, not bundled here.
 
 ## Develop
 

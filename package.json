@@ -4,9 +4,9 @@
   "packageManager": "pnpm@10.33.2",
   "description": "Author-side validation tooling for effect-kit.",
   "scripts": {
-    "guard:skills": "bash scripts/skills/guard.sh",
-    "guard:skills:codex": "bash scripts/skills/codex.sh",
-    "guard:skills:claude": "bash scripts/skills/claude.sh"
+    "guard:skills": "bash scripts/skills/guard.sh plugins/effect-kit/skills",
+    "guard:skills:codex": "bash scripts/skills/codex.sh plugins/effect-kit/skills",
+    "guard:skills:claude": "bash scripts/skills/claude.sh plugins/effect-kit/skills"
   },
   "devDependencies": {
     "yaml": "^2.9.0"

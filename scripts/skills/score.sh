@@ -19,7 +19,7 @@ for arg in "$@"; do
     *) DIR="$arg" ;;
   esac
 done
-DIR="${DIR:-$REPO_DIR/plugins/docks/skills}"
+DIR="${DIR:-$REPO_DIR/plugins/effect-kit/skills}"
 total=0
 today=$(date +%s)
 

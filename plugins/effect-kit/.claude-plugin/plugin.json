@@ -7,7 +7,9 @@
   },
   "license": "MIT",
   "skills": [
-    "./skills/engineering",
-    "./skills/productivity"
+    "./skills/engineering"
+  ],
+  "dependencies": [
+    { "name": "docks", "marketplace": "docks" }
   ]
 }

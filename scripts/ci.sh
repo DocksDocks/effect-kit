@@ -3,7 +3,8 @@
 #
 # Mirrors the docks ci.sh shape, trimmed to what effect-kit ships (skills only —
 # no agents, no scaffold spec). The bundled validators default their root to
-# plugins/docks/skills, so every call passes the explicit plugins/effect-kit/skills.
+# plugins/effect-kit/skills (repointed from the docks scaffold); ci.sh passes it
+# explicitly anyway for clarity.
 #
 # Usage:  bash scripts/ci.sh        # full run
 #         bash scripts/ci.sh -q     # quiet on success
@@ -83,7 +84,7 @@ bash scripts/tree/guard.sh . >/dev/null 2>&1 && ok "tree/guard passed" || fail "
 
 # --- 5. quality score floors (per-category) ---
 section "quality score floors"
-for c in engineering productivity; do
+for c in engineering; do
   dir="$SKILLS_DIR/$c"
   [ -d "$dir" ] || continue
   floor=$(bash scripts/config/read-floor.sh skills "$c" 2>/dev/null) || { fail "scoring.json missing skills.$c"; continue; }

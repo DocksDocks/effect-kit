@@ -4,6 +4,7 @@
   "owner": {
     "name": "DocksDocks"
   },
+  "allowCrossMarketplaceDependenciesOn": ["docks"],
   "plugins": [
     {
       "name": "effect-kit",
@@ -13,7 +14,10 @@
       "author": {
         "name": "DocksDocks"
       },
-      "license": "MIT"
+      "license": "MIT",
+      "dependencies": [
+        { "name": "docks", "marketplace": "docks" }
+      ]
     }
   ]
 }

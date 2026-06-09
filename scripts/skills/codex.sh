@@ -1,10 +1,10 @@
 #!/bin/bash
 # Guard: validate SKILL.md files against current Codex loader expectations.
-# Usage: ./codex.sh [path]   (default: plugins/docks/skills)
+# Usage: ./codex.sh [path]   (default: plugins/effect-kit/skills)
 set -u
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-DIR="${1:-$REPO_DIR/plugins/docks/skills}"
+DIR="${1:-$REPO_DIR/plugins/effect-kit/skills}"
 
 # shellcheck source=scripts/lib/skills.sh
 source "$REPO_DIR/scripts/lib/skills.sh"
